@@ -1,0 +1,112 @@
+<div class="container justify-content-center p-3 w-change">
+  <div class="container mx-auto"
+      style="background:rgba(255, 255, 255, 0.2);
+              border-radius: 25px;
+              backdrop-filter: blur(5px);">
+
+    <div class="text-center text-white border-bottom border-white pt-3">
+      <p class="fs-1">Events Search</p>          
+    </div>   
+
+    <form ngNativeValidate (ngSubmit)="Search()">
+
+      <div class="row">
+
+      <div class="col-12 pt-3">  
+      <div class="form-group">
+        <label for="keyword" style="color:rgb(146, 206, 246)">Keyword</label>
+        <sup id="star" class="text-danger">*</sup>     
+        <input matInput [(ngModel)]="keyword" [matAutocomplete]="auto"
+          [formControl]="searchEventCtrl" id="keyword" (click)="autoSearch()" class="form-control" required>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelected()">
+          <mat-option *ngIf="isLoading" class="is-loading">Loading...</mat-option>
+          <ng-container *ngIf="!isLoading">
+            <mat-option *ngFor="let item of filteredEvent" [value]="item">
+              <span>{{item.name}}</span>
+            </mat-option>
+          </ng-container>
+        </mat-autocomplete>                
+      </div>
+      </div>
+
+      <div class="col-6 pt-3">
+        <div class="form-group">
+          <label for="distance" style="color:rgb(146, 206, 246)">Distance</label>
+          <input type="number" class="form-control" [(ngModel)]="distance" id="distance" name="distance" placeholder="10" size="15">
+        </div>
+      </div>  
+
+      <div class="col-6 pt-3">
+        <div class="form-group">
+          <label for="category" style="color:rgb(146, 206, 246)">Category</label>
+          <sup id="star" class="text-danger">*</sup>
+          <div>
+            <select id="category" name="category" class="form-control" [(ngModel)]="category">
+              <option>Default</option>
+              <option>Music</option>
+              <option>Sports</option>
+              <option>Arts & Theatre</option>
+              <option>Film</option>
+              <option>Miscellaneous</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 pt-3">
+      <div class="form-group">
+        <label for="location" style="color:rgb(146, 206, 246)">Location</label>
+        <sup id="star" class="text-danger">*</sup><br>
+        <input type="text" class="form-control" [(ngModel)]="location" id="location" name="location" required [disabled]="locationStatus"><br>
+        <input type="checkbox" id="locationcheckbox" [(ngModel)]="locationcheckbox" name="locationcheckbox" (change)="Checkbox()">
+        <label for="locationcheckbox" id="checkbox" style="color:rgb(146, 206, 246)">Auto-detect your location</label>
+      </div>
+      </div>
+
+      <div class="form-group" >
+        <div class="d-flex justify-content-center pt-1 pb-4">
+        <input type="submit" id="searchbutton" class="btn btn-danger m-2"  value="SUBMIT">
+        <input type="button" id="clearbutton" class="btn btn-primary m-2"  value="CLEAR" (click)="Clear()">
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+<style>
+
+@media (max-width: 900px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .w-change {
+    width: 50%;
+  }
+}
+
+@media  (max-width: 900px) {
+  .w-change {
+    width: 100%;
+  }
+}
+
+@media  (min-width: 900px) {
+  .col-6 {
+    width: 50%;
+  }
+}
+
+@media  (max-width: 900px) {
+  .col-6 {
+    width: 100%;
+  }
+}
+</style>
+
+
+

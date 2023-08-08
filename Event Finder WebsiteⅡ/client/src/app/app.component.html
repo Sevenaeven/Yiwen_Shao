@@ -1,0 +1,22 @@
+<head>
+</head>
+<body>
+    <div class="d-flex justify-content-end p-2">
+        <button class="btn m-1" (click)="activateButton('search')" [ngClass]="{ 'active': activeButton === 'search' }">
+          <a class="text-white text-decoration-none" routerLink="/search">Search</a>
+        </button>
+        <button class="btn m-1" (click)="activateButton('favorites')" [ngClass]="{ 'active': activeButton === 'favorites' }">
+          <a class="text-white text-decoration-none" routerLink="/favorites">Favorites</a>
+        </button>
+    </div>
+<router-outlet></router-outlet>
+
+</body>
+
+<style>
+.active {
+    border-color: white;
+}
+
+</style>
+

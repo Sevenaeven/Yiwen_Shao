@@ -1,0 +1,62 @@
+<div class="mt-4" [class.d-none]="hideTable" >
+    <div class="container d-flex justify-content-center">
+    <span style="color: rgb(113, 206, 197); font-weight: bold; width: 100%;" class="text-center fs-5">List of your favorite events</span>
+    </div>
+    <div class="d-flex justify-content-center mt-3">
+    <table id="table" class="table border-dark text-dark text-center bg-white table-responsive" style="border-radius: 15px;">
+        <thead style="border-color: gainsboro">
+            <tr>
+                <th>#</th>
+                <th>Date</th>
+                <th>Event</th>
+                <th>Category</th>
+                <th>Venue</th>
+                <th>Favorite</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="contentGrey" *ngFor="let item of favoriteList; let i=index" style="border-color: gainsboro">
+                <td style="font-weight: bold;">{{i+1}}</td>
+                <td>{{item.date}}</td>
+                <td>{{item.event}}</td>
+                <td>{{item.category}}</td>
+                <td>{{item.venue}}</td>
+                <td><button class="btn btn-link text-dark" (click)="RemoveEvent(item.id)"><i class="fas fa-trash-alt"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
+<div [class.d-none]="hideNoResult" id="noresult" class="container justify-content-center mt-5 bg-white text-center text-danger" style="border-radius: 25px;font-weight: bold;">No favorite events to show</div>
+
+<style>
+
+@media (min-width: 900px) {
+  #noresult {
+    width: 50%;
+  }
+}
+
+@media  (max-width: 900px) {
+    #noresult {
+    width: 75%;
+  }
+}
+
+@media  (min-width: 900px) {
+    #table {
+    width: 75%;
+  }
+}
+
+@media  (max-width: 900px) {
+    #table {
+    width: 100%;
+    display:table-column;
+  }
+}
+
+.contentGrey:hover {
+  background-color: rgb(221, 221, 221);
+}
+</style>
