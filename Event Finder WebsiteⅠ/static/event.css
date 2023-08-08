@@ -1,0 +1,494 @@
+body{
+    background-image: url("background.jpg") ;
+    background-size: cover ;
+    background-attachment: fixed;
+    min-width: 1200px;
+}
+
+#searchbox{
+    border: black 1px solid;
+    width: 700px;
+    background:rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    margin-top: 40px;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-bottom: 40px;
+}
+
+#searchhearder{
+    font-family: Georgia;
+    font-size: 35px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-bottom: white 1px solid;
+}
+
+#searchbody{
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+label{
+    color: lightblue;
+}
+
+sup{
+    font-size: 10px;
+    color: red;
+}
+
+input{
+    color: white;
+    border:1px white solid;
+    background-color: transparent;
+    border-radius: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+#keyword{
+    width: 660px;
+    height: 30px;
+}
+
+#distance{
+    width: 200px;
+    height: 30px;
+}
+#searchleft{
+    float: left;
+}
+
+#searchright{
+    float: right;
+    position: absolute;
+    left: 350px;
+}
+select{
+    border: none;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+#category{
+    width: 340px;
+    height: 33px;
+    color: white;
+    border:1px white solid;
+    background-color: transparent;
+    border-radius: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+
+select#category {
+  background-image:
+    linear-gradient(45deg,transparent 50%, white 2%, transparent 52%),
+    linear-gradient(135deg,transparent 48%, white 2%, transparent 50%);
+  background-position:
+    calc(100% - 20px),
+    calc(100% - 16px);
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat: no-repeat;
+}
+
+option{
+    background-color: #413f3f;
+}
+
+#searchbottom{
+    margin-top: 72px;
+}
+
+#checkbox{
+    color: white;
+}
+
+#location{
+    width: 660px;
+    height: 30px;
+}
+
+#searchbutton{
+    width:110px;
+    height:40px;
+    border: #f86e3a;
+    font:bold;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: #f86e3a;
+    box-shadow: 0px 4px 0px #f1612c;
+
+}
+
+#searchbutton:hover{
+    background-color: #ff9e5b;
+    border: #ff9e5b;
+}
+
+#clearbutton{
+    width:110px;
+    height:40px;
+    border: #4866b2;
+    font:bold;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: #4866b2;
+    box-shadow: 0px 4px 0px #2c4d9a;
+
+}
+
+#clearbutton:hover{
+    background-color: #687fc0;
+    border: #687fc0;
+}
+
+#eventname:hover{
+    cursor: pointer;
+
+}
+
+#downarrow:hover{
+    cursor: pointer;
+
+}
+
+#genre:hover{
+    cursor: pointer;
+}
+
+#venue:hover{
+    cursor: pointer;
+}
+
+table{
+    width: 1200px;
+    border: black 1px solid;
+    margin-left: 150px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+
+td{
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+th{
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#eventhead{
+    box-shadow: 0px 2px 5px grey;
+}
+
+#detailclick:link{
+    color: black;
+    text-decoration: none;
+}
+
+#detailclick:hover{
+    color: #642ec4;
+    text-decoration: none;
+}
+
+#eventdetail{
+    font-family: Calibri;
+    border: black 1px solid;
+    background:rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+    margin-top: 40px;
+    margin-left: 200px;
+    margin-right: 200px;
+    overflow:auto
+
+}
+
+#detailheadline{
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+#eventdetail{
+    color: white;
+}
+
+
+#date{
+    color: #97efe9;
+    font-size: 20px;
+    font: bold;
+    margin-bottom:15px;
+    display:inline;
+
+}
+
+#team{
+    color: #97efe9;
+    font-size: 20px;
+    font: bold;
+    margin-bottom:15px;
+    display:inline;
+}
+#venued{
+    color: #97efe9;
+    font-size: 20px;
+    font: bold;
+    margin-bottom:15px;
+    display:inline;
+}
+#genres{
+    color: #97efe9;
+    font-size: 20px;
+    font: bold;
+    margin-bottom:15px;
+    display:inline;
+}
+#ticketstatus{
+    color: #97efe9;
+    font-size: 20px;
+    font: bold;
+    margin-bottom:15px;
+    display:inline;
+}
+#buyticket{
+    color: #97efe9;
+    font-size: 20px;
+    font: bold;
+    margin-bottom:15px;
+    display:inline;
+}
+#price{
+    color: #97efe9;
+    font-size: 20px;
+    font: bold;
+    margin-bottom:15px;
+    display:inline;
+}
+#artisturl{
+    color: #2da2a6;
+}
+#artisturl:link{
+    text-decoration: none;
+}
+
+#artisturl:hover{
+    color: #8955e8;
+    text-decoration: none;
+}
+
+#ticketurl{
+    color: #2da2a6;
+}
+
+#ticketurl:link{
+    text-decoration: none;
+}
+
+#ticketurl:hover{
+    color: #8955e8;
+    text-decoration: none;
+}
+
+
+#detailmap{
+    width: 550px;
+    height: auto;
+}
+
+#eventinfo{
+    float: left;
+    font-size: 15px;
+    margin-top: 40px;
+}
+
+#eventmap{
+    float: right;
+}
+
+#showdetail{
+    font-size: 20px;
+    color: white;
+    margin: 10px;
+    text-align: center;
+
+}
+
+#downarrow{
+    border: solid white;
+    border-width: 0px 1px 1px 0px;
+    top-left:0px;
+    transform: rotate(45deg);
+    width: 30px;
+    height: 30px;
+    clear: both;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+#venuedetail{
+    font-family: Calibri;
+    border: black 1px solid;
+    background: white;
+    border-radius: 25px;
+    padding:15px;
+    margin-top: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    overflow:auto
+}
+
+#drawbox{
+    border: black 1px solid;
+    border-radius: 25px;
+    overflow:auto;
+    padding: 20px;
+}
+
+#venueheadline{
+    font-size: 25px;
+    text-decoration: underline black;
+    text-align: center;
+    color: black;
+    padding: 10px;
+}
+
+#image{
+    width: 100px;
+}
+
+#address{
+    font: bold;
+    float: left;
+    position: relative;
+    left: 100px;
+    display: inline-block;
+
+}
+
+#addressdetail{
+    display: inline-block;
+    position: relative;
+    left: 100px;
+    margin-left: 10px;
+    float: left;
+    text-align: left;
+}
+
+#googlemap{
+    margin-top: 80px;
+    text-align: center;
+}
+
+#googleurl{
+    color: #2db1dc;
+ }
+
+#googleurl:link{
+    text-decoration: none;
+}
+
+#googleurl:hover{
+    color: #9567f1;
+    text-decoration: none;
+}
+
+#upcomingurl{
+    color: #2db1dc;
+}
+#upcomingurl:link{
+    text-decoration: none;
+}
+
+#upcomingurl:hover{
+    color: #9567f1;
+    text-decoration: none;
+}
+
+
+#venueinfo{
+    float: left;
+    display: inline-block;
+    font-size: 20px;
+    width: 500px;
+    padding: 10px;
+    border-right: #adabab 2px solid;
+}
+
+#upcoming{
+    float: left;
+    font-size: 20px;
+    display: inline-block;
+}
+
+#upcomingbox{
+    position: relative;
+    left: 170px;
+    margin-top: 30px;
+
+}
+
+#artistn{
+    display: inline;
+}
+
+#artistse{
+    display: inline;
+
+}
+
+h3{
+    color: red;
+    text-align: center;
+}
+
+#norecord{
+    width: 1200px;
+    margin: 0 auto;
+    height: 40px;
+    background-color: white;
+}
+
+#statuscolor{
+    display: inline;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

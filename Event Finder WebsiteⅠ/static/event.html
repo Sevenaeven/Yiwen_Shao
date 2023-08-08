@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="../static/event.css"/>
+    <script src="../static/jquery-3.6.3.js"></script>
+    <script src="../static/event.js"></script>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"/>
+</head>
+<body>
+    <div id="searchbox">
+    <div id="searchhearder">Events Search</div>
+    <div id="searchbody">
+    <form action="#" id="submitform">
+        <label for="keyword">Keyword</label>
+        <sup id="star">*</sup><br>
+        <input type="text" id="keyword" name="keyword" size="30" required/><br>
+        <div>
+        <div id="searchleft">
+        <label for="distance">Distance(miles)</label><br>
+        <input type="number" id="distance" name="distance" placeholder="10" size="15"/>
+        </div>
+        <div id="searchright">
+        <label for="category">Category</label>
+        <sup id="star">*</sup><br>
+        <div>
+        <select id="category" name="category">
+            <option>Default</option>
+            <option>Music</option>
+            <option>Sports</option>
+            <option>Arts & Theatre</option>
+            <option>Film</option>
+            <option>Miscellaneous</option>
+        </select><br>
+        </div>
+        </div>
+        </div>
+        <div id="searchbottom">
+        <label for="location">Location</label>
+        <sup id="star">*</sup>
+        <input type="checkbox" id="locationcheckbox" onclick="CheckBox()"/>
+        <label for="locationcheckbox" id="checkbox">Auto-Detect Location</label><br>
+        <input type="text" id="location" name="location" required/><br>
+
+        <input type="button" id="searchbutton" onclick="SearchSubmit() " value="SEARCH"/>
+        <input type="button" id="clearbutton" onclick="ClearSubmit()" value="CLEAR"/>
+        </div>
+    </form>
+    </div>
+    </div>
+
+    <div id="eventsearch" style="display: none">
+        <table>
+            <thead id="eventhead">
+            </thead>
+            <tbody id="eventbody">
+            </tbody>
+        </table>
+    </div>
+
+    <div id="eventdetail" style="display: none">
+        <h3 id="detailheadline"></h3>
+        <div id="eventinfo">
+        </div>
+        <div id="eventmap">
+        </div>
+
+    </div>
+    <div id="showdetail" onClick = "SearchVenue()" style="display: none">Show Venue Details</div>
+    <div id="downarrow" onClick = "SearchVenue()" style="display: none">
+    </div>
+
+    <div id="venuedetail"  style="display: none">
+        <div id="drawbox">
+            <div id="venueheadline"></div>
+            <div id="venueinfo">
+            </div>
+            <div id="upcoming">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
