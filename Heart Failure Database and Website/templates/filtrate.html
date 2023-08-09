@@ -1,0 +1,152 @@
+{% extends "bootstrap/base.html"%}
+
+{% block title%}Information Analysis{% endblock %}
+
+{% block navbar %}
+<ul class="nav nav-tabs nav-justified">
+  <li><a href="/importsub">Searching Patient Information</a></li>
+  <li><a href="/add/patient">Adding New Patients</a></li>
+  <li><a href="/update/patient">Updating Patient Information</a></li>
+  <li><a href="/delete/patient">Deleting Patient Information</a></li>
+  <li class="active"><a href="/filtrate/sex">Information Analysis</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+
+<script src="/static/jquery-3.5.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+ <div class="d1">
+    <div class="d2">
+        <div class="container">
+        <div class="d3">
+        <div class="page-header" withd="300px">
+        <div class="shadow">Hello, Dear Doctor</div>
+        <h4>You can obtain the gender distribution of patients</h4>
+        </div>
+<p>
+   <canvas id="canvas_circle" width="250" height="250"> </canvas>
+</p>
+     <table class="gridtable" >
+     <tr>
+    <th>Male Patient Total</th><th>Female Patient Total</th><th>Male Patient Ratio</th><th>Female Patient Ratio</th>
+    </tr>
+    <tr>
+    <th>{{ com }}</th><th>{{ cof }}</th><th>{{ m }}</th><th>{{ f }}</th>
+    </tr>
+    </table>
+</div>
+</div>
+</div>
+</div>
+
+
+<script>
+    var pieCanvas = document.getElementById("canvas_circle");
+
+    var fValue = {{ f }};
+    var mValue = {{ m }};
+
+    // Create a new pie chart
+    var pieChart = new Chart(pieCanvas, {
+        type: 'pie',
+        data: {
+            labels: ['Female', 'Male'],
+            datasets: [{
+                data: [fValue, mValue], // Replace with your data
+                backgroundColor: ['white', 'black'] // Customize colors
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Gender Distribution'
+            },
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+</script>
+
+
+<style type="text/css">
+.d1 {
+        background: url(/static/gene.jpg)no-repeat;
+        background-size: cover;
+        width: 1520px;
+        height: 675px;
+        position: relative;
+    }
+.d2 {
+        position: absolute;
+        left: 160px;
+        right: 160px;
+        top:0;
+        bottom: 0;
+        width: 1200px;
+        height: 675px;
+        line-height: 50px;
+        text-align: center;
+        background: rgba(225,225,225,0.6);
+    }
+
+.d3 {
+        border-radius:50px;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+        position: relative;
+        top:5px;
+        bottom: 100px;
+        width: 800px;
+        height: 600px;
+        line-height: 50px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.18);
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+.shadow {
+  padding: 30px 50px;
+  font-size:60px;
+  font-weight:bold;
+  color: #f4efef;
+  text-shadow: 5px 5px 0 #666, 7px 7px 0 #b3abab;
+}
+
+table.gridtable {
+    font-family: verdana,arial,sans-serif;
+    font-size:14px;
+    color: #f4efef;
+    border-width: 1px;
+    background: rgba(0, 0, 0, 0.3);
+    border-collapse: collapse;
+    position: relative;
+    margin-left:auto;
+    margin-right:auto;
+    top: 10px;
+    width:600px;
+    height: 120px;
+    line-height:30px
+
+}
+
+table.gridtable th {
+    text-align: center;
+    border-width: 2px;
+    padding: 4px;
+    border-style: inset ;
+    background: rgba(0, 0, 0, 0);
+
+}
+
+table.gridtable td {
+    text-align: center;
+    border-width: 2px;
+    padding: 4px;
+    border-style: inset ;
+    background: rgba(0, 0, 0, 0);
+}
+
+    </style>
+{% endblock %}

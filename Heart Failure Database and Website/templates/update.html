@@ -1,0 +1,203 @@
+{% extends "bootstrap/base.html"%}
+
+{% block title%}Updating Patient Information{% endblock %}
+
+{% block navbar %}
+<ul class="nav nav-tabs nav-justified">
+  <li><a href="/importsub">Searching Patient Information</a></li>
+  <li><a href="/add/patient">Adding New Patients</a></li>
+  <li class="active"><a href="/update/patient">Updating Patient Information</a></li>
+  <li><a href="/delete/patient">Deleting Patient Information</a></li>
+  <li><a href="/filtrate/sex">Information Analysis</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+
+<script src="/static/jquery-3.5.1.js"></script>
+<script src="/static/search.js"></script>
+
+<div class="d1">
+    <div class="d2">
+        <div class="container">
+        <div class="d3">
+       <form action="" class="basic-grey">
+           <label>
+               <span>subject_id:</span>
+               <input id="subject_id" type="text" name="subject_id">
+           </label>
+           <label>
+               <span>dod:</span>
+               <input id="dod" type="text" name="dod" >
+           </label>
+           <label>
+               <span>dod_hosp:</span>
+               <input id="dod_hosp" type="text" name="dod_hosp">
+           </label>
+           <label>
+               <span>dod_ssn:</span>
+               <input id="dod_ssn" type="text" name="dod_ssn">
+           </label>
+           <label>
+               <span>expire_flag:</span>
+               <input id="expire_flag" type="text" name="expire_flag" >
+           </label>
+           <label>
+               <span> </span>
+               <input id="send" type="button" class="button" value="Send" onclick="Update()">
+           </label>
+       </form>
+</div>
+	<div class="item item02">
+		<img src="/static/hospital1.jpg" alt="Cinque Terre">
+        <div class="cover">Office Area</div>
+	</div>
+    <div class="item item02">
+		<img src="/static/hospital2.jpg" alt="Cinque Terre">
+        <div class="cover">Lobby</div>
+	</div>
+    <div class="item item02">
+		<img src="/static/hospital3.jpg" alt="Cinque Terre">
+        <div class="cover">Pediatrics</div>
+	</div>
+</div>
+</div>
+</div>
+
+
+<style type="text/css">
+.d1 {
+        background: url(/static/gene.jpg)no-repeat;
+        background-size: cover;
+        width: 1520px;
+        height: 675px;
+        position: relative;
+    }
+.d2 {
+        position: absolute;
+        left: 160px;
+        right: 160px;
+        top:0;
+        bottom: 0;
+        width: 1200px;
+        height: 675px;
+        line-height: 50px;
+        text-align: center;
+        background: rgba(225,225,225,0.6);
+    }
+
+.d3 {
+        border-radius:50px;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+        position: relative;
+        top:30px;
+        bottom: 100px;
+        width: 800px;
+        height: 360px;
+        line-height: 40px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.18);
+        margin-left:auto;
+        margin-right:auto;
+    }
+.basic-grey {
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0);
+    padding: 10px 30px 15px 10px;
+    color: #888;
+
+}
+
+.basic-grey label {
+         display:inline-block;
+}
+
+.basic-grey label>span {
+         font-size:20px;
+         float: left;
+         width: 100px;
+         text-align: left;
+         padding-right: 0px;
+         margin-top: 2px;
+         color: #ffffff;
+         font-family:"Microsoft Yahei";
+
+}
+
+.basic-grey input[type="text"] {
+         border: 1px solid #DADADA;
+         border-radius: 10px;
+         color: #888;
+         height: 40px;
+         margin-bottom: 16px;
+         margin-right: 6px;
+         margin-top: 2px;
+         outline: 0 none;
+         padding: 3px 3px 3px 5px;
+         width: 70%;
+         font-size: 16px;
+         line-height:20px;
+         box-shadow: inset 0px 1px 4px #ECECEC;
+         -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+         -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+.basic-grey .button {
+         margin-top: 30px;
+         margin-right: 50px;
+         margin-left: -20px;
+         font-size:16px;
+         background: #27629a;
+         border: none;
+         padding: 0px 80px 0px 80px;
+         color: #FFF;
+         border-radius: 40px;
+         cursor: pointer;
+}
+
+.item{
+				position: relative;
+				width: 200px;
+				height: 200px;
+				margin-top: 65px;
+                margin-left: 35px;
+                margin-right: 35px;
+				border-radius: 50%;
+				overflow: hidden;
+				border: 2px solid #fff;
+				box-shadow: 0 0 5px #333;
+                display:inline-block;
+			}
+.item img{
+				width: 200px;
+				height: 200px;
+			}
+.cover{
+				width: 200px;
+				height: 200px;
+				background-color: rgba(0,0,0,0.3);
+				position: absolute;
+				top: 0;
+				left: 0;
+				color: #fff;
+				text-align: center;
+				line-height: 300px;
+				font-size: 30px;
+				border-radius: 50%;
+			}
+
+
+.item02 .cover{
+				opacity: 0;
+				transition: opacity 2s;
+			}
+.item02:hover .cover{
+				opacity: 1;
+			}
+
+    </style>
+
+
+{% endblock %}
